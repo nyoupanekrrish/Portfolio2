@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krrish — Basketball Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style1.css" />
+</head>
+
+<body>
+    <div class="top-animation"></div>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="navwrap container">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Krrish Nyoupane</span>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stats">Stats</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero__media" aria-hidden="true">
+      <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+        <source src="assets/hero-slo-mo.mp4" type="video/mp4"/>
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <svg class="float-ball" viewBox="0 0 100 100" aria-hidden="true">
+      <defs>
+        <radialGradient id="g" cx="35%" cy="30%">
+          <stop offset="0%" stop-color="#ff914d"/>
+          <stop offset="100%" stop-color="#ff6600"/>
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="46" fill="url(#g)" stroke="#b94700" stroke-width="2"/>
+      <path d="M10,50 C25,75 75,75 90,50" fill="none" stroke="#5a2300" stroke-width="3"/>
+      <path d="M10,50 C25,25 75,25 90,50" fill="none" stroke="#5a2300" stroke-width="3"/>
+      <path d="M50,5 v90" stroke="#5a2300" stroke-width="3"/>
+    </svg>
+
+    <div class="hero__content container">
+      <h1 class="name" data-aos="fade-up" data-aos-delay="100">
+        <span class="glow">Krrish Nyoupane</span>
+      </h1>
+      <div class="tagline" id="typed-tagline"></div>
+      <div class="cta-row" data-aos="fade-up" data-aos-delay="200">
+        <a href="#achievements" class="btn btn--primary">View Achievements</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+      <div class="scrollhint">Scroll ↓</div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-kicker">About</div>
+      <h2 class="section-title">Journey • Position • Playing Style</h2>
+      <div class="about-grid">
+        <div class="about-photo" data-aos="fade-right">
+          <img src="assets/about-photo.jpg" alt="[Your Name]—on-court" loading="lazy">
+          <div class="court-lines"></div>
+        </div>
+        <div data-aos="fade-up-text">
+          <p id="about-text" class="fade-up-text">
+            I’m <strong>Krrish Nyoupane</strong>, a <em>Shooting Guard</em> known for two-way intensity—quick first step, tight handle,
+            and a catch-and-shoot release that stretches the floor. I thrive in high-tempo systems, pressuring the ball on defense and
+            turning stops into transition buckets. My journey spans youth leagues, national circuits, and international showcases, driven
+            by relentless practice and a team-first mindset.
+         
+            Off the court, I study film, refine footwork, and lead by example in the locker room. On it, I let effort speak—every possession.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <div class="section-kicker">Achievements</div>
+      <h2 class="section-title">Timeline of Highlights</h2>
+      <div class="timeline" id="timeline">
+        <article class="card" data-aos="flip-left">
+          <div class="cicon">🏆</div>
+          <div class="year">2019</div>
+          <div class="ctitle">League MVP-Pokhara Cup</div>
+          <div class="cdesc">Averaged 26.1 PPG, 5.2 RPG, 4.8 APG; led team to best record.</div>
+        </article>
+
+        <article class="card" data-aos="flip-left" data-aos-delay="50">
+          <div class="cicon">🎯</div>
+          <div class="year">2020</div>
+          <div class="ctitle">Three-Point Champion-Time Out</div>
+          <div class="cdesc">Semi Finalist-Weekend 3PT Contest (17 shots).</div>
+        </article>
+
+        <article class="card" data-aos="flip-left" data-aos-delay="80">
+          <div class="cicon">🥇</div>
+          <div class="year">2024</div>
+          <div class="ctitle">Boudha League Champ</div>
+          <div class="cdesc">Finals MVP with a 35-7-6 performance in Game 5.</div>
+        </article>
+
+        <article class="card" data-aos="flip-left" data-aos-delay="110">
+          <div class="cicon">🌍</div>
+          <div class="year">2025</div>
+          <div class="ctitle">KMC CUP</div>
+          <div class="cdesc">Normal game but winner.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-kicker">Gallery</div>
+      <h2 class="section-title">Moments & Motion</h2>
+      <div class="grid" id="grid">
+        <a class="grid-item" href="assets/gallery-1.jpg"><img src="assets/thumbs/gallery-1.jpg" alt="Dunk" loading="lazy"></a>
+        <a class="grid-item" href="assets/gallery-2.jpg"><img src="assets/thumbs/gallery-2.jpg" alt="Pull-up jumper" loading="lazy"></a>
+        <a class="grid-item" href="assets/gallery-3.jpg"><img src="assets/thumbs/gallery-3.jpg" alt="Crossover" loading="lazy"></a>
+        <a class="grid-item" href="assets/gallery-4.jpg"><img src="assets/thumbs/gallery-4.jpg" alt="Defensive stance" loading="lazy"></a>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+      <span class="close" id="lbClose">✕</span>
+      <img src="" alt="full-size view" id="lbImg">
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="section-kicker">Stats</div>
+      <h2 class="section-title">Impact by the Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat" data-aos="zoom-in">
+          <div class="num" data-count="26.1">0</div>
+          <div class="label">Points / Game</div>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="50">
+          <div class="num" data-count="41">0</div>
+          <div class="label">3PT %</div>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+          <div class="num" data-count="5.2">0</div>
+          <div class="label">Rebounds / Game</div>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="150">
+          <div class="num" data-count="4.8">0</div>
+          <div class="label">Assists / Game</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-kicker">Contact</div>
+      <h2 class="section-title">Let’s Connect</h2>
+      <form action="https://formspree.io/f/your-endpoint" method="POST" data-aos="fade-up">
+        <input class="input" type="text" name="name" placeholder="Your Name" required>
+        <input class="input" type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button class="submit-hoop" type="submit">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16v2H4z" fill="#0d0d0d"/>
+            <path d="M6 9l2 9 4 3 4-3 2-9" stroke="#0d0d0d" stroke-width="2" fill="none"/>
+          </svg>
+          Send
+        </button>
+      </form>
+      <aside class="soc-vertical" aria-label="Social links">
+        <a href="https://github.com/nyoupanekrrish" aria-label="GitHub" class="social" title="GitHub">
+          <!-- GitHub SVG -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.8 5.42.8 11.7c0 4.87 3.16 9 7.55 10.45.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.07.67-3.72-1.48-3.72-1.48-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.16 1.71 1.16 1 .17 1.6.98 1.6.98.99 1.7 2.6 1.21 3.24.93.1-.73.38-1.21.69-1.49-2.45-.28-5.02-1.22-5.02-5.42 0-1.2.42-2.18 1.11-2.95-.11-.28-.48-1.4.11-2.92 0 0 .9-.29 2.95 1.12A10.1 10.1 0 0112 6.84c.91.004 1.83.12 2.69.35 2.05-1.41 2.95-1.12 2.95-1.12.59 1.52.22 2.64.11 2.92.69.77 1.11 1.75 1.11 2.95 0 4.2-2.58 5.14-5.04 5.41.39.34.73 1.02.73 2.06 0 1.49-.01 2.69-.01 3.05 0 .29.2.64.76.53C19.05 20.7 22.2 16.57 22.2 11.7 22.2 5.42 17.27.5 12 .5z"/></svg>
+        </a>
+
+        <a href="https://www.instagram.com/nyoupane_jii?igsh=MWNhZjhsMXhia3R6Ng%3D%3D&utm_source=qr" aria-label="Instagram" class="social" title="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zM18.4 6a1 1 0 11-1 1 1 1 0 011-1z"/></svg>
+        </a>
+
+        <a href="https://www.facebook.com/share/1cLFdYLFr2/?mibextid=wwXIfr" aria-label="Facebook" class="social" title="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12a10 10 0 10-11.5 9.9v-7H8.9v-2.9h1.6V9.4c0-1.6 1-2.5 2.4-2.5.7 0 1.4.06 1.4.06v1.6h-.8c-.8 0-1 0-1 1v1.2h1.8l-.3 2.9h-1.5v7A10 10 0 0022 12z"/></svg>
+        </a>
+
+        <a href="#" aria-label="LinkedIn" class="social" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5a2.48 2.48 0 11.001 4.959A2.48 2.48 0 014.98 3.5zM3 8.98h4v12H3v-12zM13 8.98c2.2 0 3.9 1.4 3.9 4.8V21h-4v-6.8c0-1.6-.6-2.6-1.8-2.6-1 0-1.6.66-1.9 1.3-.1.2-.1.5-.1.8V21h-4v-12h4v1.7c.6-1 1.7-2 3.8-2z"/></svg>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="back-portfolio" href="index.html">← Back to Portfolio</a>
+    <div class="copyright">© <span id="year"></span> Krrish • 🏀 Work is not finished yet...</div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="script1.js"></script>
+</body>
+</html>

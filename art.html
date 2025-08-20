@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO -->
+  <meta charset="utf-8" />
+  <title>Krrish Nyoupane — My Artwork Collection</title>
+  <meta name="description" content="A modern, sketchbook-inspired gallery showcasing the complete artwork collection of Krrish Nyoupane." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://example.com/art.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Krrish Nyoupane — My Artwork Collection" />
+  <meta property="og:description" content="Minimal gallery × sketchbook vibe with drawings, paintings, digital, and sketches." />
+  <meta property="og:image" content="assets/art/hires/art1.webp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Inter:wght@400;600;800&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Inter:wght@400;600;800&display=swap" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style2.css" />
+
+  <!-- Fallback static background for no‑JS / very low power -->
+  <noscript>
+    <style>
+      .bg-fallback{position:fixed;inset:0;z-index:-1;background:
+        url('assets/bg-sketch-fallback.jpg') center/cover no-repeat;
+        opacity:.25;filter:grayscale(100%);}
+    </style>
+  </noscript>
+</head>
+<body>
+  <div class="bg-fallback" aria-hidden="true"></div>
+
+  <!-- Background canvas (pencil strokes) -->
+  <canvas id="sketch-canvas" class="sketch-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    
+
+    <!-- Handwritten name + subtitle -->
+    <div class="title-wrap" aria-label="Site title">
+      <!-- The SVG uses a left-to-right write-on reveal. For true stroke-by-stroke,
+           replace the <text> with an outlined <path> exported from an SVG editor (see README). -->
+      <svg class="handwrite" viewBox="0 0 1200 220" role="img" aria-label="Krrish Nyoupane">
+        <title>Krrish Nyoupane</title>
+        <defs>
+          <clipPath id="clip-write">
+            <!-- This moving rect simulates writing reveal -->
+            <rect id="clip-rect" x="0" y="0" width="0" height="220"></rect>
+          </clipPath>
+          <!-- subtle jitter mask to feel hand-drawn -->
+          <filter id="paper-wobble" x="-5%" y="-10%" width="110%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="4" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.6" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g clip-path="url(#clip-write)" filter="url(#paper-wobble)">
+          <text x="2%" y="65%" class="name-stroke">Krrish Nyoupane</text>
+        </g>
+      </svg>
+      <p class="subtitle" aria-label="Collection subtitle">My Artwork Collection</p>
+    </div>
+
+    <!-- Mobile controls -->
+    <button id="menuToggle" class="icon-button" aria-expanded="false" aria-controls="toolbar" aria-label="Toggle filters & search">
+      ☰
+    </button>
+  </header>
+
+  <!-- Toolbar (filters/search/sort) -->
+  <section id="toolbar" class="toolbar" role="region" aria-label="Gallery controls">
+    <div class="chips" role="tablist" aria-label="Filter categories">
+      <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="chip" data-filter="drawings" role="tab">Drawings</button>
+      <button class="chip" data-filter="paintings" role="tab">Paintings</button>
+      <button class="chip" data-filter="digital" role="tab">Digital</button>
+      <button class="chip" data-filter="sketches" role="tab">Sketches</button>
+    </div>
+
+    <div class="search-sort">
+      <label class="visually-hidden" for="searchInput">Search artworks</label>
+      <input id="searchInput" type="search" placeholder="Search titles or tags…" aria-label="Search artworks by title or tags" />
+
+      <label for="sortSelect" class="visually-hidden">Sort by</label>
+      <select id="sortSelect" aria-label="Sort artworks">
+        <option value="newest">Sort by: Newest</option>
+        <option value="oldest">Sort by: Oldest</option>
+        <option value="title">Sort by: Title (A–Z)</option>
+      </select>
+
+      <button id="bgToggle" class="chip chip-toggle" aria-pressed="false" aria-label="Toggle sketch background">Sketch BG: On</button>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <main id="gallery" class="gallery" role="region" aria-label="Artwork gallery">
+    <!-- Example static items; you can also load from gallery.json automatically (see script.js) -->
+    <figure class="art-card" data-tags="drawings,portrait" data-year="2024">
+      <picture>
+        <source type="image/webp" srcset="assets/arts/art1.jpg 640w, assets/arts/art1.jpg 1280w" />
+        <img
+          src="assets/arts/art1.jpg"
+          srcset="assets/arts/art1.jpg 640w, assets/arts/art1.jpg 1280w"
+          sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 33vw"
+          loading="lazy"
+          alt="Charcoal portrait of an elderly man with deep expressive wrinkles" />
+      </picture>
+      <figcaption>
+        <span class="title">Monkey D luffy poster</span>
+        <span class="meta">Drawing</span>
+      </figcaption>
+      <div class="overlay" aria-hidden="true">
+       
+        <div class="overlay-actions">
+          <button class="icon-button view-btn" aria-label="View Quiet Strength fullscreen" data-hires="assets/arts/art1.jpg">⤢</button>
+          <a class="icon-button" href="assets/arts/art1.jpg" download aria-label="Download high-res">⬇</a>
+        </div>
+      </div>
+    </figure>
+
+    
+
+    <figure class="art-card" data-tags="sketches,concept" data-year="2022">
+      <picture>
+        <img
+          src="assets/arts/art2.jpg"
+          srcset="assets/arts/art2.jpg 640w, assets/arts/art2.jpg 1280w"
+          sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 33vw"
+          loading="lazy"
+          alt="Blue pencil concept sketches of futuristic sneakers on paper texture" />
+      </picture>
+      <figcaption>
+        <span class="title">Angel GOD</span>
+        <span class="meta">Pen sketch</span>
+      </figcaption>
+      <div class="overlay" aria-hidden="true">
+        <div class="overlay-actions">
+          <button class="icon-button view-btn" aria-label="View Footnotes fullscreen" data-hires="assets/arts/art2.webp">⤢</button>
+          <a class="icon-button" href="assets/arts/art2.webp" download aria-label="Download high-res">⬇</a>
+        </div>
+      </div>
+    </figure>
+
+    <figure class="art-card" data-tags="paintings,concept" data-year="2022">
+      <picture>
+        <img
+          src="assets/arts/art3.jpg"
+          srcset="assets/arts/art3.jpg 640w, assets/arts/art3.jpg 1280w"
+          sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 33vw"
+          loading="lazy"
+          alt="Blue pencil concept sketches of futuristic sneakers on paper texture" />
+      </picture>
+      <figcaption>
+        <span class="title">Gear 5</span>
+        <span class="meta">Pen sketch</span>
+      </figcaption>
+      <div class="overlay" aria-hidden="true">
+        <div class="overlay-actions">
+          <button class="icon-button view-btn" aria-label="View Footnotes fullscreen" data-hires="assets/arts/art3.jpg">⤢</button>
+          <a class="icon-button" href="assets/arts/art3.jpg" download aria-label="Download high-res">⬇</a>
+        </div>
+      </div>
+    </figure>
+    
+    </main>
+
+   
+  <!-- Sticky contact button -->
+  <button id="contactFab" class="fab" aria-haspopup="dialog" aria-controls="contactModal" aria-label="Open contact form">
+    ✎
+  </button>
+
+  <!-- Contact Modal -->
+  <dialog id="contactModal" class="modal" aria-labelledby="contactTitle">
+    <form method="dialog" class="modal-inner" role="form">
+      <header class="modal-header">
+        <h2 id="contactTitle">Submit commission request</h2>
+        <button class="icon-button close" value="cancel" aria-label="Close contact form">✕</button>
+      </header>
+      <div class="modal-body">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell me about your idea…" required></textarea>
+        </label>
+        <label class="file">
+          <span>Reference file (optional)</span>
+          <input type="file" name="file" accept="image/*,application/pdf" />
+        </label>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn" value="submit" aria-label="Send message">Send</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+    <div class="lb-chrome">
+      <button class="icon-button lb-close" aria-label="Close (Esc)">✕</button>
+      <div class="lb-tools">
+        <button class="icon-button lb-prev" aria-label="Previous (←)">←</button>
+        <button class="icon-button lb-next" aria-label="Next (→)">→</button>
+        <button class="icon-button lb-zoom-in" aria-label="Zoom in">＋</button>
+        <button class="icon-button lb-zoom-out" aria-label="Zoom out">－</button>
+        <a class="icon-button lb-download" href="#" download aria-label="Download high-res">⬇</a>
+        <button class="icon-button lb-export" aria-label="Export embeddable snippet">⧉</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame" aria-live="polite" aria-atomic="true">
+        <!-- sketch loader -->
+        <div class="sketch-loader" aria-hidden="true"></div>
+        <img id="lbImg" alt="" />
+        <div class="hand-drawn-frame" aria-hidden="true"></div>
+      </div>
+      <p id="lbCaption" class="lb-caption"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <a class="btn back-cta" href="index.html" aria-label="Back to portfolio">← Back to Portfolio</a>
+    <nav class="socials" aria-label="Social links">
+      <a href="https://github.com/nyoupanekrrish" aria-label="GitHub" rel="me" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 9.9 8.2 11.5.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.6.3-1.1.6-1.4-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.3 1.1-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.1a11.1 11.1 0 0 1 6 0c2.3-1.4 3.3-1.1 3.3-1.1.6 1.7.2 3 .1 3.3.7.9 1.1 2 1.1 3.2 0 4.6-2.8 5.6-5.4 5.9.4.3.6.8.6 1.7v2.7c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.5A12 12 0 0 0 12 .5Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/nyoupane_jii?igsh=MWNhZjhsMXhia3R6Ng%3D%3D&utm_source=qr" aria-label="Instagram" rel="me" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="12" fill="currentColor"/>
+  <path fill="#fff" d="M12 7.09a4.91 4.91 0 1 0 0 9.82 4.91 4.91 0 0 0 0-9.82Zm0 8.1a3.19 3.19 0 1 1 0-6.38 3.19 3.19 0 0 1 0 6.38Zm5.03-8.28a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0ZM17.8 8.7c-.05-1.04-.29-1.97-1.07-2.75S15.14 5.05 14.1 5c-1.11-.06-4.44-.06-5.55 0-1.04.05-1.97.29-2.75 1.07S5.05 7.36 5 8.4c-.06 1.11-.06 4.44 0 5.55.05 1.04.29 1.97 1.07 2.75.78.78 1.71 1.02 2.75 1.07 1.11.06 4.44.06 5.55 0 1.04-.05 1.97-.29 2.75-1.07.78-.78 1.02-1.71 1.07-2.75.06-1.11.06-4.44 0-5.55Zm-1.96 7.8c-.19.48-.56.85-1.04 1.04-.72.28-2.43.21-3.8.21s-3.08.06-3.8-.21a1.79 1.79 0 0 1-1.04-1.04c-.28-.72-.21-2.43-.21-3.8s-.06-3.08.21-3.8c.19-.48.56-.85 1.04-1.04.72-.28 2.43-.21 3.8-.21s3.08-.06 3.8.21c.48.19.85.56 1.04 1.04.28.72.21 2.43.21 3.8s.07 3.08-.21 3.8Z"/>
+</svg>
+
+      </a>
+      <a href="https://www.facebook.com/share/1cLFdYLFr2/?mibextid=wwXIfr" aria-label="Facebook" rel="me" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="12" fill="currentColor"/>
+  <path fill="#fff" d="M15.12 8.44h-1.4c-.22 0-.52.29-.52.68v1.33h1.92l-.26 2.01h-1.66v6.04h-2.07v-6.04h-1.35v-2.01h1.35V8.93c0-1.33.94-2.41 2.35-2.41h1.64v1.92Z"/>
+</svg>
+
+      </a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="me" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="12" fill="currentColor"/>
+  <path fill="#fff" d="M9.04 9.33v8.21H6.73V9.33h2.31ZM7.88 5.88a1.34 1.34 0 1 0 0 2.68 1.34 1.34 0 0 0 0-2.68Zm4.84 3.45c-1.27 0-2.14.69-2.46 1.38h-.03V9.33H8.04c.03.9 0 8.21 0 8.21h2.19v-4.59c0-.25.02-.5.09-.68.19-.5.63-1.02 1.37-1.02.97 0 1.36.77 1.36 1.9v4.39h2.19v-4.7c0-2.52-1.34-3.7-3.32-3.7Z"/>
+</svg>
+
+      </a>
+    </nav>
+    <small>© <span id="year"></span> Krrish Nyoupane</small>
+  </footer>
+
+  <script src="script2.js" defer></script>
+</body>
+</html>
